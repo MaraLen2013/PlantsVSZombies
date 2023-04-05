@@ -11,7 +11,7 @@ public class NewBehaviourScript : MonoBehaviour
     public List<GameObject> files;
     int i = 0;
     int j = 0;
-    int x = 0;
+    int x;
     GameObject xxx;
     // Start is called before the first frame update
     void Start()
@@ -26,15 +26,13 @@ public class NewBehaviourScript : MonoBehaviour
             mas[i, j] = child;
             j++;
         }
-        createnewzombi(0);
-        createnewzombi(1);
+        
         createnewzombi();
-        createnewzombi(3);
-        createnewzombi(4);
     }
     int y = 5;
-    public void createnewzombi(int x = 2)
+    public void createnewzombi()
     {
+        x = Random.Range(0, 5);
         Instantiate(
             files[Random.Range(0, files.Count)]
             , mas[x, 4]).GetComponent<zombicontroller>().init(this, x);

@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class osnova : MonoBehaviour
 {
-    // Start is called before the first frame update
+    solnicki sol;
     public Transform[,] mas = new Transform[5, 5];
     int i = 0;
     int j = 0;
@@ -35,20 +35,36 @@ public class osnova : MonoBehaviour
         if (mas[x, y].childCount > 0) return;
         if (plant == "Romashka")
         {
-            Instantiate(files[0], mas[x, y]);
-
+            if (sol.GetCount() >= 20)
+            {
+                Instantiate(files[0], mas[x, y]);
+                sol.moresolnc(-20);
+            }
         }
         if (plant=="Landish")
         {
-            Instantiate(files[1], mas[x, y]);
+            if (sol.GetCount()>=80)
+            {
+                Instantiate(files[1], mas[x, y]);
+                sol.moresolnc(-80);
+            }
+            
         }
         if (plant=="Mushmula")
         {
-            Instantiate(files[2], mas[x, y]);
+            if (sol.GetCount()>=60)
+            {
+                Instantiate(files[2], mas[x, y]);
+                sol.moresolnc(-60);
+            }
         }
         if (plant=="Ogurec")
         {
-            Instantiate(files[3], mas[x, y]);
+            if (sol.GetCount() >= 40)
+            {
+                Instantiate(files[3], mas[x, y]);
+                sol.moresolnc(-40);
+            }
         }
     }
     public void setplantromashka()
@@ -66,10 +82,5 @@ public class osnova : MonoBehaviour
     public void setoalntogurec()
     {
         plant = "Ogurec";
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

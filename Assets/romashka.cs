@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class romashka : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    solnicki sol;
+    IEnumerator move()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        yield return new WaitForSeconds(2);
+        sol.moresolnc(25);
     }
 }

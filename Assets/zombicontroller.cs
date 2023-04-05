@@ -56,6 +56,6 @@ public class zombicontroller : MonoBehaviour
 
     private void OnDestroy()
     {
-        o.createnewzombi(x);
+        o.createnewzombi();
     }
 }
