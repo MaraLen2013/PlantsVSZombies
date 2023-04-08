@@ -16,7 +16,7 @@ public class zombicontroller : MonoBehaviour
     {
         o = O;
         x = X;
-        y = 4;
+        y = 9;
     }
     
     private void Start()
@@ -26,7 +26,7 @@ public class zombicontroller : MonoBehaviour
     IEnumerator move()
     {
         var oo = o.mas;
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 10; i++)
         {
 
             HP plant = null;
@@ -44,7 +44,7 @@ public class zombicontroller : MonoBehaviour
                 i--;
             }
             else { 
-                y = 4 - i;
+                y = 9 - i;
             
                 gameObject.transform.parent = oo[x, y];
                 gameObject.transform.localPosition = Vector3.zero;

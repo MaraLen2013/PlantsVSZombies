@@ -9,7 +9,7 @@ using UnityEngine;
 public class osnova : MonoBehaviour
 {
     solnicki sol;
-    public Transform[,] mas = new Transform[5, 5];
+    public Transform[,] mas = new Transform[5, 10];
     int i = 0;
     int j = 0;
     public List<GameObject> files;
@@ -17,9 +17,10 @@ public class osnova : MonoBehaviour
     private string plant;
     void Start()
     {
+        sol = FindObjectOfType<solnicki>();
         foreach (Transform child in transform)
             {
-                if (j == 5)
+                if (j == 10)
                 {
                     i++;
                     j = 0;

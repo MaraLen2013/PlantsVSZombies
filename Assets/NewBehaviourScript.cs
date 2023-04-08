@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class NewBehaviourScript : MonoBehaviour
 {
 
-    public Transform[,] mas = new Transform[5, 5];
+    public Transform[,] mas = new Transform[5, 10];
     public List<GameObject> files;
     int i = 0;
     int j = 0;
@@ -18,7 +18,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            if (j == 5)
+            if (j == 10)
             {
                 i++;
                 j = 0;
@@ -26,16 +26,16 @@ public class NewBehaviourScript : MonoBehaviour
             mas[i, j] = child;
             j++;
         }
-        
-        createnewzombi();
+
+        Invoke("createnewzombi", 30);
     }
-    int y = 5;
+    int y = 10;
     public void createnewzombi()
     {
         x = Random.Range(0, 5);
         Instantiate(
             files[Random.Range(0, files.Count)]
-            , mas[x, 4]).GetComponent<zombicontroller>().init(this, x);
+            , mas[x, 9]).GetComponent<zombicontroller>().init(this, x);
     }
 
     void Update()
